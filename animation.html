@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        /* Basic setup for the clock */
+        .clock {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: blue; /* Set the background color of the clock */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Set the size and position of the hands */
+        .hand {
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: white; /* Default hand color */
+            top: 50%;
+            left: 0%;
+            transform-origin: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hand2 {
+            position: absolute;
+            width: 40%;
+            height: 2px;
+            background-color: white; /* Default hand color */
+            top: 50%;
+            left:10%;
+            transform-origin: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Set the specific color and animation for minutes hand */
+        .minutes {
+            background-color: yellow; /* Set color for minutes hand */
+            animation: rotate-minute 60s infinite linear;
+        }
+
+        /* Set the specific color and animation for hours hand */
+        .hours {
+            background-color: white; /* Set color for hours hand */
+            animation: rotate-hour 43200s infinite linear; /* 12 hours in seconds (43200) */
+        }
+
+        /* Keyframes for minute hand rotation */
+        @keyframes rotate-minute {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+
+        /* Keyframes for hour hand rotation */
+        @keyframes rotate-hour {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+
+        .clock .hour {
+            position: absolute;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .clock .hour:nth-child(3) {color:green ; transform: translate(-50%, -100%) rotate(0deg); top: 0px; left: 50%;  }
+        .clock .hour:nth-child(4) {color:green; transform: translate(-50%, -100%) rotate(0deg); top: 110px; left: 105%; }
+        .clock .hour:nth-child(5) {color:green; transform: translate(-50%, -100%) rotate(0deg); top: 220px; left: 50%; }
+        .clock .hour:nth-child(6) {color:green; transform: translate(-50%, -100%) rotate(0deg); top: 110px; left: -5%; }
+
+
+   
+   </style>
+</head>
+<body>
+    
+    <div class="clock">
+        <div class="minutes hand"></div> <!-- Minute hand -->
+        <div class="hours hand2"></div>   <!-- Hour hand -->
+ 
+        <div class="hour">1</div>
+        <div class="hour">3</div>
+        <div class="hour">6</div>
+        <div class="hour">9</div>
+
+    </div>
+
+</body>
+</html>

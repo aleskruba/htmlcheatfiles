@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Logistics</title>
+
+    <meta property="og:title" content="The best transport company">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://dokram.cz">
+  
+    <meta property="og:description" content="we focus on super transport">
+    <meta property="og:locale" content="en_EU">
+    <meta property="og:site_name" content="transport and logistics" >
+  
+</head>
+<style>
+  /* Style for invalid input fields */
+  input:invalid {
+      border: 2px solid red;
+  }
+
+  /* Style for valid input fields */
+  input:valid {
+      border: 2px solid green;
+  }
+
+  /* Additional form styling */
+  form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+  }
+
+  label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+  }
+
+  input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  input:focus {
+      border-color: #007bff;
+      outline: none;
+  }
+
+  .error-message {
+      color: red;
+      font-size: 14px;
+  }
+
+  .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .submit-btn:hover {
+      background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<canvas width="640" height="480" id="my_canvas">
+
+
+</canvas>
+</body>
+
+<script>
+    let canvas = document.getElementById('my_canvas');
+    let context = canvas.getContext('2d');
+
+    const speed = 4;
+    let position = 0;
+    let moveSpeed = speed;
+    let radius = 40;
+    
+    function moveBall(){
+        if (position + radius > 640){
+            moveSpeed = -speed
+        }else if (position - radius < 0){
+            moveSpeed = speed
+        }
+        position +=moveSpeed;
+
+    }
+
+    function drawBall(){
+        context.clearRect(0, 0, 640, 480);
+        context.fillStyle = "#62687f"
+        context.beginPath();
+        context.arc(position, 50,radius,0,2*Math.PI);
+        context.fill()
+    }
+    
+    function animate(){
+        moveBall()
+        drawBall()
+        window.requestAnimationFrame(animate)
+    }
+
+    window.requestAnimationFrame(animate)
+</script>
+</form>
+
+</html>

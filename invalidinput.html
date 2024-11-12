@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Focus Example</title>
+    <style>
+        /* Style for the input field */
+        input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 200px;
+            margin: 10px 0;
+        }
+
+        /* Style when the input is focused */
+        input:focus {
+            border-color: #007bff; /* Blue border color */
+            outline: none; /* Remove the default outline */
+        }
+        input:focus {
+            border-color: #007bff; /* Blue border color */
+            outline: none; /* Remove the default outline */
+        }
+        input:invalid {
+      border: 2px solid red;
+        }
+
+        /* Style for valid input fields */
+        input:valid {
+            border: 2px solid green;
+        }
+        a[href*="meta"] {
+            background-color: antiquewhite;
+            color:red
+        }
+
+   /*      li:nth-of-type(odd) {
+            background-color: blanchedalmond;
+        } */
+
+        div~ul{
+            color: #007bff;
+        }
+        div + p{
+            background-color: red;
+        }
+
+        button:active{
+            background-color: #007bff;
+        }
+        li:first-letter{
+            background-color: aquamarine;
+        }
+        li::selection {
+    color:brown;
+    background-color: antiquewhite;
+    line-height: 1;
+}
+li::marker {
+    color: cornflowerblue;
+    content: '-.- ';
+    font-size: 1.1em;
+}
+
+#tips::before{
+    background: darkkhaki;
+    color:darkslategray;
+    content: "Tip:";
+    padding-left: 3px;
+    padding-right: 5px;
+    border-radius: 10%;
+}
+
+#tips::after{
+    background:darkkhaki;
+    color:darkslategray;
+    content: "!!";
+    padding-right: 5px;
+    border-radius: 20%;
+}
+.textual{
+ border: 1px;
+ padding: 10px;
+}
+
+.textual:hover{
+box-shadow: 5px 0 25px black;
+}
+
+.longtextdiv{
+font-family:'Trebouchet MS'
+}
+
+.text{
+    width: 200px;
+    border: 2px solid brown;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text:hover{
+
+    overflow: visible;
+}
+
+.vertical{
+    writing-mode:vertical-rl;
+}
+
+.textwrap{
+    width: 50px;
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+
+.shadow{
+    text-shadow: 0 0 30px green, 0 0 5px white;
+}
+
+.transform{
+    transition: transform 2s;
+}
+.transform:hover{
+    transform: rotate(2deg);
+    color: red;
+
+}
+
+.a{
+    margin: 30px;
+    transform: skewX(20deg);
+    transition: margin 2s, transform 2s;
+}
+.b{
+    margin: 100px;
+    transform: rotate(20deg);
+    transition: margin 2s, transform 2s;
+}
+.a:hover {
+            margin: 50px; /* Change margin on hover */
+            transform: skewX(40deg); /* Change transform on hover */
+}
+
+.b:hover {
+    margin: 150px; /* Change margin on hover */
+    transform: rotate(40deg); /* Change transform on hover */
+}
+
+.box{
+    display: grid;
+    width: 240px;
+    height: 240px;
+    margin:100px;
+    background-color: rgba(55, 255, 0, 0.5);
+    border-radius: 12px;
+    border:solid #6feb6f 4px;
+
+}
+
+.box:hover {
+    transform: rotateZ(60deg);
+    background-color: lightcoral;
+    opacity: 50%;
+    transition: 2s;
+}
+    </style>
+</head>
+<body>
+
+    <div class="box">
+
+    </div>
+
+    <div class="a">
+        A
+    </div>
+    <div class="b">
+        B
+    </div>
+
+    <h2 class="transform">transform</h2>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" 
+               id="username" 
+               name="username" 
+               placeholder="Enter your username"
+               minlength="2"
+               maxlength="4">
+    </form>
+
+    <a href="about.meta.com" class="one">one</a>
+    <a href="met">two</a>
+    <a href="about.meta.com" class="three">three</a>
+
+<div>ul+li</div>    
+<ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+    <li>four</li>
+    <li>five</li>
+    <li>six</li>
+
+</ul>
+
+<ul>
+    <li>next</li>
+</ul>
+<!-- 
+<div id="blog">
+    <div>sibling</div>
+    <h1>LATEST NEWS</h1>
+    <div>
+        <h1>WEATHER FORECATS</h1>
+        <p>Today</p>
+        <p>Tomorrow</p>
+        
+    </div> -->
+    <div></div>
+    <p>plus</p>
+
+<button>press button</button>
+
+<p id="tips"> Don't rinse your pasta after it is drained. </p>
+<p> Slice the tomatoes. Take the extra efforts to seed them. </p>
+<p id="tips"> Peel and seed large tomatoes. </p>
+</div>
+
+<div class="textual">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione optio, autem culpa voluptatum dolorum est corporis itaque perspiciatis, incidunt adipisci ducimus soluta, veniam maiores sint. Repellat laboriosam iure alias?
+</div>
+<div class="textual">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione optio, autem culpa voluptatum dolorum est corporis itaque perspiciatis, incidunt adipisci ducimus soluta, veniam maiores sint. Repellat laboriosam iure alias?
+</div>
+
+<div class="longtextdiv">
+
+<div class="text">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+</div>
+
+<h1 class="vertical">
+    vertical
+</h1>
+
+<div class="textwrap">
+    Lorem ipsum, dolor sit amet  ssssssssssssssssssssss
+
+</div>
+
+<h1 class="shadow">TEXT SHADOW</h1>
+</body>
+</html>

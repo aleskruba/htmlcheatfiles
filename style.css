@@ -1,0 +1,29 @@
+
+
+
+#header1{
+    color: rgba(0, 255, 0,1);
+}
+
+
+
+  p { 
+    color: hsl(0, 100%, 50%);
+  }
+
+
+.middle{
+    display: inline;
+}
+
+
+.parent{
+    text-align: justify;
+    color: red;
+}
+
+.child {
+    padding:45px;
+    float: left;
+    background-color:
+  }
